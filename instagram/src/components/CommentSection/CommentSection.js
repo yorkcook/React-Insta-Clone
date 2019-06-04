@@ -5,12 +5,9 @@ const CommentSection = ({ username, text }) => {
     <div className="comment-container">
       <div className="comment-list">
         {comments.map(() => {
-          {
-            username;
-          }
-          {
-            text;
-          }
+          <p>
+            {username} {text}
+          </p>;
         })}
       </div>
     </div>
