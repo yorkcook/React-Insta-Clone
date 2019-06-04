@@ -19,6 +19,11 @@ const PostContainer = props => {
         </div>
         {props.post.timestamp}
       </div>
+      <div>
+        <form>
+          <input type="text" placeholder="Add a comment..." />
+        </form>
+      </div>
     </div>
   );
 };
