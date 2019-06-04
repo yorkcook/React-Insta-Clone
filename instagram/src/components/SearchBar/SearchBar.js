@@ -2,9 +2,11 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    <form>
-      <input placeholder="Search" />
-    </form>
+    <div>
+      <form>
+        <input type="text" placeholder="Search" />
+      </form>
+    </div>
   );
 };
 
