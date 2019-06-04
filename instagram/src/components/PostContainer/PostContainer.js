@@ -17,12 +17,12 @@ const PostContainer = props => {
             return <CommentSection comment={comment} />;
           })}
         </div>
+        <div>
+          <form>
+            <input type="text" placeholder="Add a comment..." />
+          </form>
+        </div>
         {props.post.timestamp}
-      </div>
-      <div>
-        <form>
-          <input type="text" placeholder="Add a comment..." />
-        </form>
       </div>
     </div>
   );
