@@ -1,15 +1,18 @@
 import React from "react";
 
-const CommentSection = ({ username, text }) => {
+const CommentSection = ({ comment }) => {
   return (
     <div className="comment-container">
       <div className="comment-list">
         {comments.map(() => {
           <p>
-            {username} {text}
+            {comment.username} {comment.text}
           </p>;
         })}
       </div>
+      <form>
+        <input type="text" placeholder="Search" />
+      </form>
     </div>
   );
 };
