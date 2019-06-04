@@ -6,6 +6,7 @@ import dummyData from "./dummyData.js";
 import SearchBar from "./components/SearchBar/SearchBar";
 
 import PostContainer from "./components/PostContainer/PostContainer";
+import CommentBar from "./components/CommentBar/CommentBar";
 
 class App extends React.Component {
   constructor() {
@@ -20,7 +21,6 @@ class App extends React.Component {
     return (
       <div>
         <SearchBar />
-        <h2>Welcome to your Insta App</h2>
 
         {this.state.data.map(post => {
           return <PostContainer post={post} />;
@@ -31,6 +31,8 @@ class App extends React.Component {
           return <PostContainer post={post} key={post.username} />;
           // return <PostContainer post={post} />;
         })} */}
+
+        <CommentBar />
       </div>
     );
   }

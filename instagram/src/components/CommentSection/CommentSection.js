@@ -7,6 +7,7 @@ const CommentSection = props => {
     <div className="comment-container">
       <Comment comment={props.comment} />
     </div>
+
     //   <form>
     //     <input type="text" placeholder="Search" />
     //   </form>
