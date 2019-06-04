@@ -6,7 +6,7 @@ import dummyData from "./dummyData.js";
 import SearchBar from "./components/SearchBar/SearchBar";
 
 import PostContainer from "./components/PostContainer/PostContainer";
-import CommentBar from "./components/CommentBar/CommentBar";
+//import CommentBar from "./components/CommentBar/CommentBar";
 
 class App extends React.Component {
   constructor() {
@@ -32,7 +32,7 @@ class App extends React.Component {
           // return <PostContainer post={post} />;
         })} */}
 
-        <CommentBar />
+        {/* <CommentBar /> */}
       </div>
     );
   }
