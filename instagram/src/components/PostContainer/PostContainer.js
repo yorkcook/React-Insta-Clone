@@ -1,16 +1,22 @@
 import React from "react";
-// import CommentSection from "../CommentSection/CommentSection";
+import CommentSection from "../CommentSection/CommentSection";
 
 const PostContainer = props => {
-  // console.log(props);
+  console.log(props);
   return (
     <div className="postContainer">
       <div className="postHeader">
-        <p>{props.post.username}</p>
         <img src={props.post.thumbnailUrl} alt="thumbnail" />
+        {props.post.username}
       </div>
       <div className="postBody">
-        <img src={props.post.imageUrl} alt="full" /> {props.post.likes}{" "}
+        <img src={props.post.imageUrl} alt="full" />{" "}
+        <div>{props.post.likes}</div>
+        <div>
+          {props.post.comments.map(comment => {
+            return <CommentSection comment={comment} />;
+          })}
+        </div>
         {props.post.timestamp}
       </div>
     </div>

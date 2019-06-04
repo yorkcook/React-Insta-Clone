@@ -1,7 +1,8 @@
 import React from "react";
+import Comment from "./Comment";
 
 const CommentSection = props => {
-  //   console.log(comment);
+  console.log(props);
   return (
     <div className="comment-container">
       <Comment comment={props.comment} />

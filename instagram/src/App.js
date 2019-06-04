@@ -32,10 +32,6 @@ class App extends React.Component {
           // return <PostContainer post={post} />;
         })} */}
       </div>
-
-      // <div>
-      //   <PostContainer />
-      // </div>
     );
   }
 }
