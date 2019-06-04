@@ -1,19 +1,14 @@
 import React from "react";
 
-const CommentSection = ({ comment }) => {
+const CommentSection = props => {
+  //   console.log(comment);
   return (
     <div className="comment-container">
-      <div className="comment-list">
-        {comments.map(() => {
-          <p>
-            {comment.username} {comment.text}
-          </p>;
-        })}
-      </div>
-      <form>
-        <input type="text" placeholder="Search" />
-      </form>
+      <Comment comment={props.comment} />
     </div>
+    //   <form>
+    //     <input type="text" placeholder="Search" />
+    //   </form>
   );
 };
 

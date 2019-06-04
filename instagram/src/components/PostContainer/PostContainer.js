@@ -1,36 +1,17 @@
 import React from "react";
-
-// const PostContainer = ({
-//   username,
-//   thumbnailUrl,
-//   imageUrl,
-//   likes,
-//   timestamp
-// }) => {
-//   return (
-//     <div className="postContainer">
-//       <div className="postHeader">
-//         {username}
-//         {thumbnailUrl}
-//       </div>
-//       <div>
-//         {imageUrl}
-//         {likes}
-//         {timestamp}
-//       </div>
-//       {/* <CommentSection /> */}
-//     </div>
-//   );
-// };
+// import CommentSection from "../CommentSection/CommentSection";
 
 const PostContainer = props => {
+  // console.log(props);
   return (
     <div className="postContainer">
       <div className="postHeader">
-        {props.username} {props.thumbnailUrl}
+        <p>{props.post.username}</p>
+        <img src={props.post.thumbnailUrl} alt="thumbnail" />
       </div>
       <div className="postBody">
-        {props.imageUrl} {props.likes} {props.timestamp}
+        <img src={props.post.imageUrl} alt="full" /> {props.post.likes}{" "}
+        {props.post.timestamp}
       </div>
     </div>
   );
