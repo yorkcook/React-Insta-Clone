@@ -1,12 +1,24 @@
 import React from "react";
 
-const PostContainer = props => {
+const PostContainer = ({
+  username,
+  thumbnailUrl,
+  imageUrl,
+  likes,
+  timestamp
+}) => {
   return (
     <div className="postContainer">
       <div className="postHeader">
-        {props.username}
-        {props.thumbnailUrl}
+        {username}
+        {thumbnailUrl}
       </div>
+      <div>
+        {imageUrl}
+        {likes}
+        {timestamp}
+      </div>
+      {/* <CommentSection /> */}
     </div>
   );
 };

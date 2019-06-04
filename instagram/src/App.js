@@ -16,11 +16,11 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div>
         <SearchBar />
-        <h2>Welcome to your Insta App!</h2>
+        <h2>Welcome to your Insta App</h2>
 
         {this.state.data.map(post => {
           return <PostContiner post={post} key={post.id} />;
