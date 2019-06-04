@@ -23,7 +23,7 @@ class App extends React.Component {
         <h2>Welcome to your Insta App</h2>
 
         {this.state.data.map(post => {
-          return <PostContiner post={post} key={post.id} />;
+          return <PostContiner />;
         })}
       </div>
     );
