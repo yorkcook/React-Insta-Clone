@@ -15,25 +15,26 @@ class App extends React.Component {
     this.state = {
       data: [],
       search: "",
-      filteredPosts: []
-      // comments: "",
-      // newComment: ""
+      filteredPosts: [],
+      comments: "",
+      newComment: ""
     };
   }
 
-  // addNewComment = e => {
-  //   e.preventDefault();
-  //   const newComment = {
-  //     username: "Team Yolo",
-  //     text: this.state.newComment
-  //   };
-  //   this.setState({
-  //     comments: [...this.state.comments, newComment],
-  //     newComment: ""
-  //   });
-  // };
+  addNewComment = e => {
+    e.preventDefault();
+    const newComment = {
+      username: "Team Yolo",
+      text: this.state.newComment
+    };
+    this.setState({
+      comments: [...this.state.comments, newComment],
+      newComment: ""
+    });
+  };
 
   changeHandler = e => {
+    e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value
     });
