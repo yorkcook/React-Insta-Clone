@@ -6,7 +6,7 @@ import dummyData from "./dummyData.js";
 import SearchBar from "./components/SearchBar/SearchBar";
 
 import PostContainer from "./components/PostContainer/PostContainer";
-import CommentSection from "./components/CommentSection/CommentSection";
+//import CommentSection from "./components/CommentSection/CommentSection";
 //import CommentBar from "./components/CommentBar/CommentBar";
 
 class App extends React.Component {
@@ -56,20 +56,28 @@ class App extends React.Component {
       <div>
         <SearchBar
           newSearch={this.state.search}
-          searchFilter={this.state.searchFilter}
+          searchFilter={this.searchFilter}
         />
 
-        {this.state.data.map(post => {
-          return <PostContainer post={post} />;
-        })}
-
-        {/* {this.state.data.map(post => {
-          // return <PostContainer />;
-          return <PostContainer post={post} key={post.username} />;
-          // return <PostContainer post={post} />;
-        })} */}
-
-        {/* <CommentBar /> */}
+        {this.state.filteredPosts.length === 0
+          ? this.state.data.map(post => {
+              return (
+                <PostContainer
+                  post={post}
+                  filteredPosts={this.state.filteredPosts}
+                  searchFilter={this.searchFilter}
+                />
+              );
+            })
+          : this.state.filteredPosts.map(post => {
+              return (
+                <PostContainer
+                  post={post}
+                  filteredPosts={this.state.filteredPosts}
+                  searchFilter={this.searchFilter}
+                />
+              );
+            })}
       </div>
     );
   }

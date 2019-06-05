@@ -5,9 +5,9 @@ class SearchBar extends React.Component {
     return (
       <input
         type="text"
-        onChange={this.props.changeHandler}
+        onChange={this.props.searchFilter}
         name="search"
-        value={this.props.newSearch}
+        // value={this.props.newSearch}
         placeholder="Search"
       />
     );
@@ -18,7 +18,12 @@ class SearchBar extends React.Component {
 //   return (
 //     <div className="search">
 //       <form>
-//         <input type="text" placeholder="Search" />
+//         <input
+//           type="text"
+//           name="search"
+//           onChange={this.props.searchFilter}
+//           placeholder="Search"
+//         />
 //       </form>
 //     </div>
 //   );
