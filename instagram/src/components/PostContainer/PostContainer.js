@@ -10,19 +10,19 @@ const PostContainer = props => {
         {props.post.username}
       </div>
       <div className="postBody">
-        <img src={props.post.imageUrl} alt="full" />{" "}
+        <img className="mainPicture" src={props.post.imageUrl} alt="full" />{" "}
         <div>{props.post.likes}</div>
         <div>
           {props.post.comments.map(comment => {
             return <CommentSection comment={comment} />;
           })}
         </div>
+        {props.post.timestamp}
         <div>
           <form>
             <input type="text" placeholder="Add a comment..." />
           </form>
         </div>
-        {props.post.timestamp}
       </div>
     </div>
   );
