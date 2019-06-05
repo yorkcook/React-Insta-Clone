@@ -14,22 +14,24 @@ class App extends React.Component {
     super();
     this.state = {
       data: [],
-      comments: "",
-      newComment: ""
+      search: "",
+      filteredPosts: []
+      // comments: "",
+      // newComment: ""
     };
   }
 
-  addNewComment = e => {
-    e.preventDefault();
-    const newComment = {
-      username: "Team Yolo",
-      text: this.state.newComment
-    };
-    this.setState({
-      comments: [...this.state.comments, newComment],
-      newComment: ""
-    });
-  };
+  // addNewComment = e => {
+  //   e.preventDefault();
+  //   const newComment = {
+  //     username: "Team Yolo",
+  //     text: this.state.newComment
+  //   };
+  //   this.setState({
+  //     comments: [...this.state.comments, newComment],
+  //     newComment: ""
+  //   });
+  // };
 
   changeHandler = e => {
     this.setState({
@@ -41,11 +43,21 @@ class App extends React.Component {
     this.setState({ data: dummyData });
   }
 
+  searchFilter = e => {
+    const filtered = this.state.data.filter(post =>
+      post.username.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    this.setState({ filteredPosts: filtered });
+  };
+
   render() {
     // console.log(this.state);
     return (
       <div>
-        <SearchBar />
+        <SearchBar
+          newSearch={this.state.search}
+          searchFilter={this.state.searchFilter}
+        />
 
         {this.state.data.map(post => {
           return <PostContainer post={post} />;

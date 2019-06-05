@@ -42,3 +42,9 @@ code {
   display: flex;
   max-width: 100%;
 }
+
+.comments {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+}

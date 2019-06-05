@@ -19,7 +19,7 @@ const PostContainer = props => {
         </div>
         {props.post.timestamp}
         <div>
-          <form onSubmit={this.addNewComment}>
+          {/* <form onSubmit={this.state.addNewComment}>
             <input
               type="text"
               name="newComment"
@@ -27,7 +27,7 @@ const PostContainer = props => {
               onChange={this.changeHandler}
               placeholder="Add a comment..."
             />
-          </form>
+          </form> */}
         </div>
       </div>
     </div>
