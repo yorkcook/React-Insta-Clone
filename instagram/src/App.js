@@ -15,9 +15,9 @@ class App extends React.Component {
     this.state = {
       data: [],
       search: "",
-      filteredPosts: [],
-      comments: "",
-      newComment: ""
+      filteredPosts: []
+      // comments: "",
+      // newComment: ""
     };
   }
 
@@ -34,7 +34,6 @@ class App extends React.Component {
   };
 
   changeHandler = e => {
-    e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value
     });

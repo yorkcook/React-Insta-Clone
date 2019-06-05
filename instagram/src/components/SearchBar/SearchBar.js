@@ -17,14 +17,12 @@ class SearchBar extends React.Component {
 // const SearchBar = () => {
 //   return (
 //     <div className="search">
-//       <form>
-//         <input
-//           type="text"
-//           name="search"
-//           onChange={this.props.searchFilter}
-//           placeholder="Search"
-//         />
-//       </form>
+//       <input
+//         type="text"
+//         name="search"
+//         onChange={props.searchFilter}
+//         placeholder="Search"
+//       />
 //     </div>
 //   );
 // };
