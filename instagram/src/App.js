@@ -15,9 +15,9 @@ class App extends React.Component {
     this.state = {
       data: [],
       search: "",
-      filteredPosts: []
-      // comments: "",
-      // newComment: ""
+      filteredPosts: [],
+      comments: "",
+      newComment: ""
     };
   }
 
