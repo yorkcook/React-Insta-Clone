@@ -3,6 +3,17 @@ import CommentSection from "../CommentSection/CommentSection";
 
 const PostContainer = props => {
   console.log(props);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const newComment = {
+      id: 4,
+      username: "Team Yolo",
+      text: props.newComment
+    };
+    console.log(newComment, "test");
+    props.addNewComment(props.post.id, newComment);
+  };
   return (
     <div className="postContainer">
       <div className="postHeader">
@@ -10,19 +21,27 @@ const PostContainer = props => {
         {props.post.username}
       </div>
       <div className="postBody">
-        <img src={props.post.imageUrl} alt="full" />{" "}
-        <div>{props.post.likes}</div>
+        <img className="mainPicture" src={props.post.imageUrl} alt="full" />{" "}
+        <div>
+          {props.post.likes} <p>{"likes"}</p>
+        </div>
         <div>
           {props.post.comments.map(comment => {
             return <CommentSection comment={comment} />;
           })}
         </div>
+        {props.post.timestamp}
         <div>
-          <form>
-            <input type="text" placeholder="Add a comment..." />
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="newComment"
+              value={props.newComment}
+              onChange={props.changeHandler}
+              placeholder="Add a comment..."
+            />
           </form>
         </div>
-        {props.post.timestamp}
       </div>
     </div>
   );
