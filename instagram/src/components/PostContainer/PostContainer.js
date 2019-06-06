@@ -1,8 +1,16 @@
 import React from "react";
 import CommentSection from "../CommentSection/CommentSection";
+//import styled, { css } from "styled-components";
+import MainPicture from "./PostContainerStyle";
 
 const PostContainer = props => {
   console.log(props);
+
+  const Comments = styled.img`
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+  `;
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -21,9 +29,9 @@ const PostContainer = props => {
         {props.post.username}
       </div>
       <div className="postBody">
-        <img className="mainPicture" src={props.post.imageUrl} alt="full" />{" "}
+        <MainPicture src={props.post.imageUrl} alt="full" />{" "}
         <div>
-          {props.post.likes} <p>{"likes"}</p>
+         <Comments {props.post.likes} {"likes"} />
         </div>
         <div>
           {props.post.comments.map(comment => {
