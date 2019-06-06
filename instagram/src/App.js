@@ -16,19 +16,17 @@ class App extends React.Component {
       data: [],
       search: "",
       filteredPosts: [],
-      comments: "",
+      // comments: [],
       newComment: ""
     };
   }
 
-  addNewComment = e => {
-    e.preventDefault();
-    const newComment = {
-      username: "Team Yolo",
-      text: this.state.newComment
-    };
+  addNewComment = (postId, newComment) => {
+    const newPost = this.state.data.filter(post => postId === post.id)[0];
+
+    newPost.comments.push(newComment);
     this.setState({
-      comments: [...this.state.comments, newComment],
+      data: [...this.state.data, newPost],
       newComment: ""
     });
   };
@@ -66,6 +64,10 @@ class App extends React.Component {
                   post={post}
                   filteredPosts={this.state.filteredPosts}
                   searchFilter={this.searchFilter}
+                  addNewComment={this.addNewComment}
+                  changeHandler={this.changeHandler}
+                  newComment={this.state.newComment}
+                  // comments={this.comments}
                 />
               );
             })
@@ -75,6 +77,10 @@ class App extends React.Component {
                   post={post}
                   filteredPosts={this.state.filteredPosts}
                   searchFilter={this.searchFilter}
+                  addNewComment={this.addNewComment}
+                  changeHandler={this.changeHandler}
+                  newComment={this.state.newComment}
+                  // comments={this.comments}
                 />
               );
             })}
