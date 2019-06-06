@@ -4,7 +4,7 @@ import "./App.css";
 
 import dummyData from "./dummyData.js";
 import SearchBar from "./components/SearchBar/SearchBar";
-
+import styled from "styled-components";
 import PostContainer from "./components/PostContainer/PostContainer";
 //import CommentSection from "./components/CommentSection/CommentSection";
 //import CommentBar from "./components/CommentBar/CommentBar";
